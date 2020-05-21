@@ -66,8 +66,8 @@ def on_local_message(client, userdata, msg):
     cur_time = time.perf_counter()
     if prev_time is not None and cur_time is not None:
         diff = cur_time - prev_time
-        print("[%4d] [%s] TimeDiff(%s): %10.3fms %s" % (
-            appcount, cur_time, msg.topic, diff*1000, msg.payload))
+        print("[%s] [Processing time: %7.3fms] [Topic: %s] [%s]" % (
+            datetime.now(), diff * 1000, msg.topic, msg.payload))
         # print("Payload: {}".format(msg.payload))
     else:
         print("Unknown")
